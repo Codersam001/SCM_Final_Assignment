@@ -10,11 +10,13 @@
             background-color: rgb(128, 6, 6);
             margin: 0;
             padding: 20px;
+            animation: fadeIn 1.5s ease-out;
         }
 
         header {
             text-align: center;
             margin-bottom: 30px;
+            animation: slideIn 1s ease-out;
         }
 
         .logo {
@@ -22,14 +24,21 @@
             border-radius: 70%;
             display: block;
             margin: 0 auto;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: rotate(360deg);
         }
 
         h1, h3 {
             color: white;
+            animation: fadeInUp 1s ease-out;
         }
 
         h2, h4, h5 {
             color: rgb(128, 6, 6);
+            animation: fadeInUp 1.5s ease-out;
         }
 
         .ingredients, .instructions {
@@ -38,6 +47,16 @@
             padding: 20px;
             margin-bottom: 20px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            animation: fadeInUp 2s ease-out forwards;
+        }
+
+        .ingredients {
+            animation-delay: 0.5s;
+        }
+
+        .instructions {
+            animation-delay: 1s;
         }
 
         ul, ol {
@@ -49,6 +68,7 @@
             border-collapse: collapse;
             background-color: white;
             margin-top: 10px;
+            animation: fadeInUp 1.5s ease-out;
         }
 
         th, td {
@@ -66,6 +86,8 @@
             display: block;
             margin: 15px auto;
             border-radius: 8px;
+            opacity: 0;
+            animation: fadeIn 1s ease-out forwards;
         }
 
         footer {
@@ -73,9 +95,47 @@
             margin-top: 20px;
             font-size: 0.9em;
             color: #ccc;
+            animation: fadeInUp 2s ease-out;
+            animation-delay: 2s;
         }
 
-        /* Optional responsive improvements */
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Hover effects */
+        .logo:hover {
+            transform: rotate(360deg);
+        }
+
         @media (max-width: 600px) {
             body {
                 padding: 10px;
