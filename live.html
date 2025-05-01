@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Finder Chatbot</title>
+    <style>
+        /* Styling the chat interface */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f1f1f1;
+        }
+
+        .chat-container {
+            width: 300px;
+            height: 400px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+        }
+
+        .chat-box {
+            flex-grow: 1;
+            overflow-y: scroll;
+            border-bottom: 1px solid #ccc;
+            padding: 10px;
+            max-height: 350px;
+        }
+
+        .message-input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .send-button {
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .send-button:hover {
+            background-color: #45a049;
+        }
+
+        .user {
+            background-color: #e1f7d5;
+            padding: 5px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+
+        .bot {
+            background-color: #d4e5e7;
+            padding: 5px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <div id="chat-box" class="chat-box"></div>
+        <input id="message-input" class="message-input" type="text" placeholder="Ask me something..." />
+        <button id="send-button" class="send-button">Send</button>
+    </div>
+
+    <script>
+        // Elements
+        const chatBox = document.getElementById("chat-box");
+        const messageInput = document.getElementById("message-input");
+        const sendButton = document.getElementById("send-button");
+
+        // Function to display a message in the chat box
+        function displayMessage(message, sender = "user") {
+            const messageDiv = document.createElement("div");
+            messageDiv.classList.add(sender);
+            messageDiv.textContent = message;
+            chatBox.appendChild(messageDiv);
+
+            // Scroll to the bottom of the chat box to show the latest message
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        // Function to handle sending messages and answering questions
+        function sendMessage() {
+            const message = messageInput.value.trim();
+            if (message) {
+                displayMessage(message); // Display user message
+                messageInput.value = ''; // Clear input field
+
+                // Generate a response based on the user's question
+                setTimeout(() => {
+                    let response = getBotResponse(message);
+                    displayMessage(response, "bot"); // Display bot response
+                }, 1000);
+            }
+        }
+
+        // Function to generate bot responses
+        function getBotResponse(message) {
+            message = message.toLowerCase();
+
+            if (message.includes("search") && message.includes("Course")) {
+                return "You can search for various courses !";
+            }
+            if (message.includes("how ")) {
+                return "You can filter by different diets like Vegetarian, Vegan, Keto, etc.";
+            }
+            if (message.includes("ingredients")) {
+                return "Yes, you can search recipes by ingredients! Just enter the ingredients you have.";
+            }
+            if (message.includes("how") && message.includes("use")) {
+                return "To use the recipe finder, type in ingredients you have, select a diet, and click search!";
+            }
+            if (message.includes("hello") || message.includes("hi")) {
+                return "Hello! How can I assist you with finding recipes today?";
+            }
+            
+            return "I'm sorry, I didn't quite understand that. Could you rephrase your question?";
+        }
+
+        // Event listener for the send button
+        sendButton.addEventListener("click", sendMessage);
+
+        // Optional: Allow pressing Enter to send a message
+        messageInput.addEventListener("keypress", (e) => {
+            if (e.key === "Enter") {
+                sendMessage();
+            }
+        });
+    </script>
+</body>
+</html>
