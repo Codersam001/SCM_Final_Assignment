@@ -3,96 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recipe Finder</title>
+    <meta name="description" content="Find recipes based on ingredients you have - MealMap helps you discover delicious meals">
+    <title>MealMap - Recipe Finder | Discover Recipes With Your Ingredients</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header class="head">
-        <div class="store">
+    <header class="header">
+        <div class="brand-container">
             <div class="logo">
-                <img src="mealmap.jpeg" height="100" width="100" alt="MealMap Logo">
+                <img src="mealmap.jpeg" height="100" width="100" alt="MealMap Logo" loading="lazy">
             </div>
-            <div class="nav2">
+            <div class="brand-info">
                 <h1>MealMap</h1>
-                <p>Find the perfect recipe with the ingredients you have!</p>
+                <p class="tagline">Find the perfect recipe with the ingredients you have!</p>
             </div>
         </div>
-        <button type="submit" class="loginbtn"><a href="login.html">Login</a></button>
+        <nav class="user-nav">
+            <a href="login.html" class="login-btn" role="button">Login</a>
+        </nav>
     </header>
-    <main>
-        <section class="search-bar">
-            <input type="text" id="ingredient-input" placeholder="Enter ingredients (comma-separated)">
-            <button id="search-button">Search</button>
+
+    <main class="main-content">
+        <section class="search-section" aria-labelledby="search-heading">
+            <h2 id="search-heading" class="visually-hidden">Recipe Search</h2>
+            <div class="search-bar">
+                <label for="ingredient-input" class="visually-hidden">Enter ingredients</label>
+                <input type="text" id="ingredient-input" placeholder="Enter ingredients (comma-separated)" aria-label="Enter ingredients separated by commas">
+                <button id="search-button" class="search-btn">Search Recipes</button>
+            </div>
         </section>
 
-        <section class="filters">
-            <label for="diet">Cuisine Filter</label>
-            <select id="diet">
-                <option value="all">All</option>
-                <option value="veg">Veg</option>
-                <option value="vegan">Vegan</option>
-                <option value="gluten-free">Gluten-Free</option>
-                
-            </select>
+        <section class="filters-section" aria-labelledby="filters-heading">
+            <h2 id="filters-heading" class="visually-hidden">Recipe Filters</h2>
+            <div class="filters">
+                <label for="cuisine-filter">Cuisine:</label>
+                <select id="cuisine-filter" aria-label="Filter recipes by cuisine">
+                    <option value="all">All Cuisines</option>
+                    <option value="veg">Vegetarian</option>
+                    <option value="vegan">Vegan</option>
+                    <option value="gluten-free">Gluten-Free</option>
+                </select>
+            </div>
         </section>
-        <section id="results" class="results">
-            <!-- Recipe cards will appear here -->
+
+        <aside class="sidebar" id="sidebar" aria-label="Cuisine navigation">
+            <button class="toggle-btn" id="sidebar-toggle" aria-expanded="false" aria-controls="sidebar">☰ Menu</button>
+            <div class="sidebar-content">
+                <h2>Cuisine Types</h2>
+                <ul class="cuisine-list">
+                    <li><a href="veg.html" class="cuisine-link">Vegetarian</a></li>
+                    <li><a href="nonveg.html" class="cuisine-link">Non-vegetarian</a></li>
+                    <li><a href="#" class="cuisine-link">South Indian</a></li>
+                    <li><a href="#" class="cuisine-link">North Indian</a></li>
+                    <li><a href="sp.html" class="cuisine-link">MealMap Special</a></li>
+                    <li><a href="Review.html" class="cuisine-link">Review Recipes</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <section id="results" class="results" aria-live="polite">
+            <!-- Dynamic search results will appear here -->
         </section>
-        <!-- Button to toggle sidebar visibility -->
-  <button class="toggle-btn" onclick="toggleSidebar()">☰ </button>
 
-  <!-- Sidebar -->
-  <div class="sidebar">
-    <h2>Cuisine</h2>
-    <ul>
-      <li><a href="veg.html">veg</a></li>
-      <li><a href="nonveg.html">Non-veg</a></li>
-      <li><a href="#">South Indian</a></li>
-      <li><a href="#">North Indian </a></li>
-      <li><a href="sp.html" > Mealmap Special </a></li>
-      <li><a href="Review.html" > Review Box</a></li>
-    </ul>
-  </div>
+        <section class="featured-recipes" aria-labelledby="featured-heading">
+            <h2 id="featured-heading">Featured Recipes</h2>
+            <div class="recipe-grid">
+                <article class="recipe-card">
+                    <img src="food1.jpg" alt="Chicken dish" class="recipe-image" loading="lazy">
+                    <div class="recipe-content">
+                        <h3 class="recipe-name">Chicken</h3>
+                        <a href="chicken.html" class="recipe-button">View Recipe</a>
+                    </div>
+                </article>
 
-        <div class="recipe-container">
-            <div class="recipe-card">
-                <img src="food1.jpg" alt="Chicken" class="recipe-image">
-                <h2 class="recipe-name">Chicken</h2>
-                <a href="chicken.html" class="recipe-button">View Recipe</a>
-            </div>
+                <article class="recipe-card">
+                    <img src="bur.jpeg" alt="Burger" class="recipe-image" loading="lazy">
+                    <div class="recipe-content">
+                        <h3 class="recipe-name">Burger</h3>
+                        <a href="burger.html" class="recipe-button">View Recipe</a>
+                    </div>
+                </article>
 
-            <div class="recipe-card">
-                <img src="bur.jpeg" alt="Burger" class="recipe-image">
-                <h2 class="recipe-name">Burger</h2>
-                <a href="burger.html" class="recipe-button">View Recipe</a>
-            </div>
-            <div class="recipe-card">
-                <img src="cak.jpeg" alt="Chocolate Cake" class="recipe-image">
-                <h2 class="recipe-name">Chocolate Cake</h2>
-                <a href="cake.html" class="recipe-button">View Recipe</a>
-            </div>
+                <article class="recipe-card">
+                    <img src="cak.jpeg" alt="Chocolate Cake" class="recipe-image" loading="lazy">
+                    <div class="recipe-content">
+                        <h3 class="recipe-name">Chocolate Cake</h3>
+                        <a href="cake.html" class="recipe-button">View Recipe</a>
+                    </div>
+                </article>
 
-            <div class="recipe-card">
-                <img src="food3.jpg" alt="Pizza" class="recipe-image">
-                <h2 class="recipe-name">Pizza</h2>
-                <a href="pizza.html" class="recipe-button">View Recipe</a>
-            </div>
+                <article class="recipe-card">
+                    <img src="food3.jpg" alt="Pizza" class="recipe-image" loading="lazy">
+                    <div class="recipe-content">
+                        <h3 class="recipe-name">Pizza</h3>
+                        <a href="pizza.html" class="recipe-button">View Recipe</a>
+                    </div>
+                </article>
 
-            <div class="recipe-card">
-                <img src="food6.jpg" alt="Spaghetti" class="recipe-image">
-                <h2 class="recipe-name">Spaghetti</h2>
-                <a href="spaghetti.html" class="recipe-button">View Recipe</a>
-            </div>
+                <article class="recipe-card">
+                    <img src="food6.jpg" alt="Spaghetti" class="recipe-image" loading="lazy">
+                    <div class="recipe-content">
+                        <h3 class="recipe-name">Spaghetti</h3>
+                        <a href="spaghetti.html" class="recipe-button">View Recipe</a>
+                    </div>
+                </article>
 
-            <div class="recipe-card">
-                <img src="food7.jpg" alt="Cannoli" class="recipe-image">
-                <h2 class="recipe-name">Cannoli</h2>
-                <a href="cannoli.html" class="recipe-button">View Recipe</a>
+                <article class="recipe-card">
+                    <img src="food7.jpg" alt="Cannoli" class="recipe-image" loading="lazy">
+                    <div class="recipe-content">
+                        <h3 class="recipe-name">Cannoli</h3>
+                        <a href="cannoli.html" class="recipe-button">View Recipe</a>
+                    </div>
+                </article>
             </div>
-        </div>
-        
-       
+        </section>
     </main>
-    <script src="script.js"></script>
+
+    <script src="script.js" defer></script>
 </body>
 </html>
