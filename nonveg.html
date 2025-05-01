@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delicious Non-Vegetarian Recipes</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            text-align: center;
+            padding: 2rem;
+            background-color: rgb(120, 117, 117);
+            color: white;
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        header p {
+            font-size: 1.2rem;
+        }
+        
+        .recipes {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            padding: 2rem;
+        }
+        
+        .recipe-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 300px;
+            text-align: center;
+            padding: 1rem;
+        }
+        
+        .recipe-card img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        
+        .recipe-card h2 {
+            font-size: 1.5rem;
+            margin: 1rem 0 0.5rem;
+        }
+        
+        .recipe-card p {
+            font-size: 1rem;
+            color: #555;
+        }
+        
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            margin-top: auto;
+
+        }
+        .logo img {
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo"><img src="mealmap.jpeg"  height="100" width="100"></div>
+        <h1>Delicious Non-Vegetarian Recipes</h1>
+        <p>Explore a variety of non-vegetarian dishes that are flavorful and easy to prepare!</p>
+    </header>
+    
+    <section class="recipes">
+        <div class="recipe-card">
+            <img src="nonweb1.jpg" alt="Chicken Curry">
+            <h2>Chicken Curry</h2>
+            <p>A spicy and flavorful curry made with tender chicken pieces and aromatic spices.</p>
+        </div>
+
+        <div class="recipe-card">
+            <img src="nonweb2.jpg" alt="Grilled Salmon">
+            <h2>Grilled Salmon</h2>
+            <p>Fresh salmon fillets grilled to perfection, served with lemon and herbs.</p>
+        </div>
+
+        <div class="recipe-card">
+            <img src="nonweb3.jpg" alt="Beef Stroganoff">
+            <h2>Egg Curry</h2>
+            <p>A rich and creamy dish made with Fresh Eggs , mushrooms, and onions.</p>
+        </div>
+
+        <div class="recipe-card">
+            <img src="nonweb4.jpg" alt="Shrimp Tacos">
+            <h2>Shrimp Tacos</h2>
+            <p>Delicious shrimp tacos topped with fresh salsa and avocado.</p>
+        </div>
+
+        <div class="recipe-card">
+            <img src="nonweb5.jpg" alt="Lamb Kofta">
+            <h2>Lamb Kofta</h2>
+            <p>Spiced ground lamb shaped into skewers and grilled, served with yogurt sauce.</p>
+        </div>
+
+        <div class="recipe-card">
+            <img src="nonweb6.jpg" alt="Pork Chops">
+            <h2>Pork Chops</h2>
+            <p>Juicy pork chops seasoned and pan-seared, served with apple sauce.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Mealmap. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById("date").textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
