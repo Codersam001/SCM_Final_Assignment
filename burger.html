@@ -3,127 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Classic Homemade Burger Recipe | MealMap</title>
+    <title>Classic Burger Recipe | MealMap</title>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f5f5f5;
+            font-family: Arial, sans-serif;
+            background-color: #666;
             margin: 0;
-            padding: 0;
-            color: #333;
-            line-height: 1.6;
+            padding: 20px;
+            color: white;
         }
-
+        
         .container {
             max-width: 800px;
             margin: 0 auto;
-            padding: 20px;
-            background-color: white;
-            box-shadow: 0 0 15px rgba(0,0,0,0.1);
         }
-
+        
         header {
             text-align: center;
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 2px solid #e74c3c;
+            margin-bottom: 20px;
         }
-
+        
         .logo {
             width: 100px;
             height: 100px;
-            object-fit: contain;
-            margin-bottom: 10px;
+            border-radius: 50%;
         }
-
+        
         h1 {
-            color: #e74c3c;
+            color: white;
+            font-style: italic;
             margin: 10px 0;
-            font-size: 2.2rem;
         }
-
-        .recipe-image {
-            width: 100%;
-            max-height: 400px;
-            object-fit: cover;
-            border-radius: 8px;
-            margin: 20px 0;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-
-        .section {
+        
+        .recipe-section {
             background-color: white;
             border-radius: 8px;
             padding: 20px;
-            margin-bottom: 25px;
-            border-left: 4px solid #e74c3c;
-        }
-
-        h2 {
-            color: #e74c3c;
-            margin-top: 0;
-            font-size: 1.6rem;
-        }
-
-        h3 {
+            margin-bottom: 20px;
             color: #333;
-            font-size: 1.3rem;
-            margin: 20px 0 10px;
         }
-
+        
+        h2 {
+            color: #666;
+            margin-top: 0;
+        }
+        
+        h3 {
+            color: #666;
+        }
+        
         ul, ol {
             padding-left: 20px;
+            line-height: 1.6;
         }
-
+        
         li {
             margin-bottom: 8px;
         }
-
-        strong {
-            color: #e74c3c;
+        
+        .recipe-image {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin: 15px 0;
         }
-
+        
         table {
             width: 100%;
             border-collapse: collapse;
-            margin: 20px 0;
+            background-color: white;
+            margin: 15px 0;
         }
-
+        
         th, td {
-            padding: 12px;
+            padding: 10px;
             text-align: left;
-            border-bottom: 1px solid #ddd;
+            border: 1px solid #ddd;
         }
-
+        
         th {
-            background-color: #f8f8f8;
-            color: #e74c3c;
+            background-color: #f2f2f2;
+            color: #666;
         }
-
-        tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-
+        
         footer {
             text-align: center;
-            margin-top: 30px;
-            padding: 20px;
-            color: #777;
-            font-size: 0.9em;
-        }
-
-        @media (max-width: 600px) {
-            .container {
-                padding: 15px;
-            }
-            
-            h1 {
-                font-size: 1.8rem;
-            }
-            
-            .section {
-                padding: 15px;
-            }
+            margin-top: 20px;
+            color: #ccc;
         }
     </style>
 </head>
@@ -132,67 +99,51 @@
         <header>
             <img src="mealmap.jpeg" alt="MealMap Logo" class="logo">
             <h1>Classic Homemade Burger</h1>
-            <p>The perfect juicy burger recipe for your next cookout</p>
         </header>
 
         <main>
-            <section class="section">
+            <section class="recipe-section">
                 <h2>Ingredients</h2>
                 
-                <h3>For the Burger Patties:</h3>
+                <h3>Burger Patties:</h3>
                 <ul>
-                    <li>1 lb (450g) ground beef (80% lean, 20% fat)</li>
-                    <li>1 teaspoon salt</li>
-                    <li>½ teaspoon freshly ground black pepper</li>
-                    <li>1 tablespoon Worcestershire sauce (optional)</li>
-                    <li>1 teaspoon garlic powder (optional)</li>
+                    <li>1 lb ground beef (80% lean)</li>
+                    <li>1 tsp salt</li>
+                    <li>½ tsp black pepper</li>
+                    <li>1 tbsp Worcestershire sauce (optional)</li>
                 </ul>
                 
-                <h3>For the Burger Assembly:</h3>
+                <h3>For Assembly:</h3>
                 <ul>
-                    <li>4 hamburger buns, lightly toasted</li>
-                    <li>4 slices cheese (American, cheddar, or your favorite)</li>
-                    <li>Lettuce leaves</li>
-                    <li>1 tomato, sliced</li>
-                    <li>½ red onion, thinly sliced</li>
-                    <li>Pickles (optional)</li>
-                    <li>Condiments: ketchup, mustard, mayonnaise</li>
+                    <li>4 hamburger buns</li>
+                    <li>4 cheese slices</li>
+                    <li>Lettuce, tomato, onion</li>
+                    <li>Condiments: ketchup, mustard, mayo</li>
                 </ul>
             </section>
 
-            <section class="section">
+            <section class="recipe-section">
                 <h2>Instructions</h2>
-                <img src="burger-image.jpg" alt="Juicy homemade burger" class="recipe-image">
+                <img src="burger-image.jpg" alt="Juicy burger" class="recipe-image">
                 
                 <ol>
-                    <li>
-                        <strong>Prepare the patties:</strong> In a large bowl, gently mix ground beef with salt, pepper, Worcestershire sauce, and garlic powder (if using). Divide into 4 equal portions and form into patties about ¾-inch thick. Make a slight indentation in the center of each patty to prevent bulging during cooking.
-                    </li>
-                    <li>
-                        <strong>Cook the burgers:</strong> Preheat grill or skillet to medium-high heat. Cook patties for 3-4 minutes per side for medium (160°F internal temperature). Add cheese during the last minute of cooking if desired.
-                    </li>
-                    <li>
-                        <strong>Toast the buns:</strong> Lightly toast the cut sides of the buns on the grill or in a toaster.
-                    </li>
-                    <li>
-                        <strong>Assemble the burgers:</strong> Spread condiments on the bottom bun. Add lettuce, tomato, the cooked patty with cheese, onions, and pickles. Top with the other bun half.
-                    </li>
-                    <li>
-                        <strong>Serve immediately</strong> with your favorite sides like fries or coleslaw.
-                    </li>
+                    <li><strong>Make patties:</strong> Mix beef with seasonings. Form into 4 patties, ¾-inch thick.</li>
+                    <li><strong>Cook:</strong> Grill or pan-fry 3-4 minutes per side (160°F internal temp).</li>
+                    <li><strong>Add cheese:</strong> Place cheese on patties last minute to melt.</li>
+                    <li><strong>Toast buns:</strong> Lightly toast cut sides.</li>
+                    <li><strong>Assemble:</strong> Build burgers with your favorite toppings.</li>
                 </ol>
                 
-                <h3>Chef's Tips:</h3>
+                <h3>Tips:</h3>
                 <ul>
-                    <li>For juicier burgers, don't overwork the meat when forming patties.</li>
-                    <li>Let the cooked burgers rest for 2-3 minutes before serving.</li>
-                    <li>Try different cheese varieties like blue cheese or pepper jack for variation.</li>
-                    <li>Add a fried egg or bacon for a delicious twist.</li>
+                    <li>Don't overwork the meat - keeps burgers tender</li>
+                    <li>Make a thumbprint in center to prevent bulging</li>
+                    <li>Let burgers rest 2 minutes before serving</li>
                 </ul>
             </section>
 
-            <section class="section">
-                <h2>Nutritional Information</h2>
+            <section class="recipe-section">
+                <h2>Nutrition Info</h2>
                 <p>Per serving (1 burger):</p>
                 <table>
                     <tr>
@@ -201,7 +152,7 @@
                     </tr>
                     <tr>
                         <td>Calories</td>
-                        <td>450 kcal</td>
+                        <td>450</td>
                     </tr>
                     <tr>
                         <td>Protein</td>
@@ -212,20 +163,15 @@
                         <td>25g</td>
                     </tr>
                     <tr>
-                        <td>Carbohydrates</td>
+                        <td>Carbs</td>
                         <td>30g</td>
                     </tr>
-                    <tr>
-                        <td>Fiber</td>
-                        <td>2g</td>
-                    </tr>
                 </table>
-                <p><em>Note: Nutritional values are approximate and may vary based on specific ingredients used.</em></p>
             </section>
         </main>
 
         <footer>
-            <p>&copy; 2024 MealMap. All recipes are for personal use only.</p>
+            <p>&copy; 2024 MealMap</p>
         </footer>
     </div>
 </body>
