@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: rgb(128,6,6);
+            background-color: rgb(128, 6, 6);
             margin: 0;
             padding: 20px;
         }
@@ -19,12 +19,17 @@
 
         .logo {
             width: 100px;
-            border-radius: 70%; /* Adjust size as needed */
-    
+            border-radius: 70%;
+            display: block;
+            margin: 0 auto;
         }
 
-        h1 {
+        h1, h3 {
             color: white;
+        }
+
+        h2, h4, h5 {
+            color: rgb(128, 6, 6);
         }
 
         .ingredients, .instructions {
@@ -35,60 +40,64 @@
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
-        h2 {
-            color:rgb(128,6,6);
-        }
-        h5{
-            color:rgb(128,6,6);
-            
-        }
-h3{
-    color:white;
-}
-
         ul, ol {
             line-height: 1.6;
+        }
 
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            margin-top: 10px;
+        }
+
+        th, td {
+            border: 1px solid rgb(128, 6, 6);
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: white;
+            color: rgb(128, 6, 6);
+        }
+
+        .Cannoli-image {
+            display: block;
+            margin: 15px auto;
+            border-radius: 8px;
         }
 
         footer {
             text-align: center;
             margin-top: 20px;
             font-size: 0.9em;
-            color: #777;
+            color: #ccc;
         }
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            padding: 20px;
-            background-color:rgb(128,6,6);
+
+        /* Optional responsive improvements */
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+
+            .ingredients, .instructions {
+                padding: 15px;
+            }
         }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background-color: white;
-        }
-        th, td {
-            border: 1px solid rgb(128,6,6);
-            padding: 8px;
-            text-align: left;
-        }
-        th {
-            background-color: white;
-            color: rgb(128,6,6);
-        }
-        
     </style>
 </head>
 <body>
-    <img src="mealmap.jpg" alt="Website Logo" class="logo">
+
     <header>
-        
-        <h1><i>DELICIOUS CANNOLI</i></h1>
+        <img src="mealmap.jpg" alt="MealMap Logo" class="logo">
+        <h1><i>Delicious Cannoli</i></h1>
     </header>
+
     <main>
         <section class="ingredients">
-            <h2><b>Ingredients</b></h2>
+            <h2>Ingredients</h2>
+
             <h4>For the shells:</h4>
             <ul>
                 <li>2 cups all-purpose flour</li>
@@ -101,6 +110,7 @@ h3{
                 <li>1/2 cup dry white wine (or as needed)</li>
                 <li>Oil for frying</li> 
             </ul>
+
             <h4>For the filling:</h4>
             <ul>
                 <li>15 oz ricotta cheese (drained)</li>
@@ -109,70 +119,56 @@ h3{
                 <li>1/2 cup mini chocolate chips (optional)</li>
                 <li>Zest of 1 orange (optional)</li>
             </ul>
-            <h4>For Garnishing:</h4>
-        <ul>
-            <li>Powdered sugar (for dusting)</li>
-            <li>Chopped pistachios (optional, for rolling the edges)</li>
-            <li>More chocolate chips (optional)</li>
-        </ul>
+
+            <h4>For garnishing:</h4>
+            <ul>
+                <li>Powdered sugar (for dusting)</li>
+                <li>Chopped pistachios (optional)</li>
+                <li>Extra chocolate chips (optional)</li>
+            </ul>
         </section>
+
         <section class="instructions">
-            <h2>Instructions:</h2>
-            <img src="cannoli.jpg"alt="Cannoli" class="Cannoli-image" height="200px">
+            <h2>Instructions</h2>
+            <img src="cannoli.jpg" alt="Cannoli Dessert" class="Cannoli-image" height="200px">
+
             <ol>
-                <li><strong>Make the Shells:</strong> In a large bowl, combine the flour, sugar, cocoa powder (if using), cinnamon, and salt. Add the cold butter and rub it into the flour mixture until it resembles coarse crumbs.</li>
-                <li>Stir in the beaten egg and wine. Mix until the dough comes together. Knead the dough on a floured surface for about 5 minutes, or until smooth. Cover with plastic wrap and let it rest for at least 30 minutes.</li>
-                <li><strong>Shape the Shells:</strong> Roll out the dough on a floured surface to about 1/8-inch thickness. Use a round cookie cutter or a glass to cut out circles about 4 inches in diameter. Wrap each circle of dough around a cannoli tube, sealing the edges with a little egg white.</li>
-                <li><strong>Fry the Shells:</strong> Heat the oil in a deep pan to 350°F (175°C). Fry the shells for 2-3 minutes until golden brown. Remove and set aside to drain on paper towels. Once cool, slide the shells off the tubes.</li>
-                <li><strong>Prepare the Filling:</strong> In a medium bowl, mix the ricotta cheese, powdered sugar, and vanilla extract until smooth and creamy. Stir in the mini chocolate chips and candied orange peel (if using).</li>
-                <li><strong>Fill the Shells:</strong> Pipe or spoon the ricotta filling into the cooled cannoli shells. Don’t fill too early to avoid sogginess.</li>
-                <li><strong>Serve:</strong> Dust with powdered sugar and serve immediately for the best crispness and flavor.</li>
+                <li><strong>Make the Shells:</strong> In a large bowl, mix the flour, sugar, cocoa powder (if using), cinnamon, and salt. Add butter and rub it in until crumbly.</li>
+                <li>Add the egg and wine. Mix to form a dough. Knead on a floured surface for 5 minutes. Cover and rest for 30 minutes.</li>
+                <li><strong>Shape:</strong> Roll out and cut into 4-inch circles. Wrap around cannoli tubes, sealing with egg white.</li>
+                <li><strong>Fry:</strong> Heat oil to 350°F (175°C). Fry shells 2–3 mins until golden. Drain and cool.</li>
+                <li><strong>Filling:</strong> Mix ricotta, powdered sugar, vanilla. Add chips and orange zest if desired.</li>
+                <li><strong>Assemble:</strong> Fill cooled shells just before serving to prevent sogginess.</li>
+                <li><strong>Serve:</strong> Dust with powdered sugar. Garnish as desired.</li>
             </ol>
+
             <h2>Tips for Perfect Cannoli</h2>
             <ul>
-                <li><strong>Drain the Ricotta:</strong> Ricotta can be watery, so drain it well using a cheesecloth or fine mesh sieve before mixing.</li>
-                <li><strong>Rest the Dough:</strong> Let the dough rest for at least 30 minutes to make rolling it easier.</li>
-                <li><strong>Frying Temperature:</strong> Maintain the oil at 350°F (175°C) for crisp, golden shells.</li>
-                <li><strong>Fill Just Before Serving:</strong> Fill the shells only before serving to keep them crispy.</li>
-                <li><strong>Pistachio Garnish:</strong> Roll the ends of the cannoli in chopped pistachios for extra flavor and color.</li>
-            </ul>   
+                <li><strong>Drain Ricotta:</strong> Use cheesecloth or a fine mesh sieve.</li>
+                <li><strong>Rest Dough:</strong> It makes rolling easier.</li>
+                <li><strong>Monitor Frying Temperature:</strong> Keep it steady at 350°F.</li>
+                <li><strong>Fill at the Last Minute:</strong> Keeps the shell crisp.</li>
+                <li><strong>Add Pistachios:</strong> For color and crunch.</li>
+            </ul>
         </section>
-    <section class="nutritional information (per serving)">
-    <h3>Nutritional Information (per serving)</h3>
-    <table>
-        <tr>
-            <th>Nutrient</th>
-            <th>Amount </th>
-        </tr>
-        <tr>
-            <td>Calories</td>
-            <td> 250kcal</td>
-        </tr>
-        <tr>
-            <td>Protein</td>
-            <td>5 g</td>
-        </tr>
-        <tr>
-            <td>Fat</td>
-            <td>15 g</td>
-        </tr>
-        <tr>
-            <td>Carbohydrates</td>
-            <td> 30 g</td>
-        </tr>
-        <tr>
-            <td>Fiber</td>
-            <td>1 g</td>
-        </tr>
-        <tr>
-            <td>Sugar</td>
-            <td>8g</td>
-        </tr>
-    </table>
-    </section>
+
+        <section class="nutrition">
+            <h3>Nutritional Information (per serving)</h3>
+            <table>
+                <tr><th>Nutrient</th><th>Amount</th></tr>
+                <tr><td>Calories</td><td>250 kcal</td></tr>
+                <tr><td>Protein</td><td>5 g</td></tr>
+                <tr><td>Fat</td><td>15 g</td></tr>
+                <tr><td>Carbohydrates</td><td>30 g</td></tr>
+                <tr><td>Fiber</td><td>1 g</td></tr>
+                <tr><td>Sugar</td><td>8 g</td></tr>
+            </table>
+        </section>
     </main>
+
     <footer>
-        <p>&copy; 2024 MEALMAP</p>
+        <p>&copy; 2024 MEALMAP. All rights reserved.</p>
     </footer>
+
 </body>
 </html>
