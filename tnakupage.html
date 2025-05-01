@@ -5,87 +5,146 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thank You - MealMap</title>
     <style>
-        /* Basic CSS Reset */
-        * {
+        /* Modern CSS Reset */
+        *, *::before, *::after {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
         
-        /* Body Styles */
+        /* Vibrant Body Gradient */
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f9f6f1;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f9f6f1 0%, #fff5e6 100%);
             color: #333;
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 100vh;
+            min-height: 100vh;
+            padding: 20px;
         }
         
-        /* Container Styles */
+        /* Animated Container */
         .thank-you-container {
             text-align: center;
-            padding: 2rem;
-            border-radius: 8px;
-            background-color: #fff;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 2.5rem;
+            border-radius: 16px;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             max-width: 500px;
-            width: 90%;
+            width: 100%;
+            transform: translateY(0);
+            animation: floatUp 0.6s ease-out;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(5px);
         }
         
-        /* Heading Styles */
+        @keyframes floatUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Vibrant Heading */
         h1 {
-            color: #636262;
-            margin-bottom: 0.5rem;
+            color: #ff6b6b;
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, #ff6b6b, #ffa502);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 700;
         }
         
-        /* Paragraph Styles */
+        /* Improved Paragraph */
         p {
-            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            color: #555;
         }
         
-        /* Icon Styles */
+        /* Animated Icon */
         .icon {
-            font-size: 3rem;
-            margin-top: 1rem;
-            color: #ffa500;
+            font-size: 4rem;
+            margin: 1.5rem 0;
+            display: inline-block;
+            animation: bounce 2s infinite;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
         
-        /* Button Container */
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        /* Modern Buttons */
         .buttons {
             display: flex;
-            gap: 1rem;
+            gap: 1.2rem;
             justify-content: center;
-            margin-top: 1rem;
+            margin-top: 1.5rem;
         }
         
-        /* Button Styles */
         .button {
             text-decoration: none;
             color: white;
-            background-color: #5e5c5c;
-            padding: 0.8rem 1.5rem;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
+            background: linear-gradient(to right, #ff6b6b, #ff8e53);
+            padding: 0.9rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
         }
         
         .button:hover {
-            background-color: #706e6e;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+        }
+        
+        .button:active {
+            transform: translateY(1px);
+        }
+        
+        /* Decorative Elements */
+        .thank-you-container::before {
+            content: "";
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            border-radius: 20px;
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fbc2eb, #a6c1ee);
+            z-index: -1;
+            opacity: 0.2;
         }
     </style>
 </head>
 <body>
     <div class="thank-you-container">
         <h1>Thank You for Your Feedback!</h1>
-        <p>We appreciate your time and review. Your feedback helps us improve MealMap and bring you even better recipes!</p>
+        <p>We truly appreciate you taking the time to share your thoughts with us. Your feedback is invaluable in helping us improve MealMap and create even better culinary experiences for you!</p>
+        
+        <div class="icon">&#127860;</div>
         
         <div class="buttons">
             <a href="1.html" class="button">Back to Home</a>
+            <a href="#" class="button">Explore More Recipes</a>
         </div>
-        
-        <div class="icon">&#127860;</div>
     </div>
 </body>
 </html>
