@@ -3,225 +3,241 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chocolate Cake Recipe</title>
+    <title>Delicious Chocolate Cake Recipe | MealMap</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: grey;
+            background-color: #5f5b5b;
             margin: 0;
             padding: 20px;
+            color: white;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         header {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
 
         .logo {
             width: 100px;
-            border-radius: 70%; /* Adjust size as needed */
-    
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
         }
 
         h1 {
             color: white;
+            font-style: italic;
+            margin: 10px 0;
+            font-size: 2rem;
         }
 
-        .ingredients, .instructions {
+        .recipe-section {
             background-color: white;
             border-radius: 8px;
             padding: 20px;
             margin-bottom: 20px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            color: #333;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
         }
 
         h2 {
-            color:rgb(113, 110, 110);
+            color: #5f5b5b;
+            margin-top: 0;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 8px;
         }
-        h5{
-            color:rgb(125, 121, 121);
-            
+
+        h3 {
+            color: #5f5b5b;
+            margin: 15px 0 10px;
         }
-h3{
-    color: white
-}
 
         ul, ol {
+            padding-left: 20px;
             line-height: 1.6;
-
         }
 
-        footer {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 0.9em;
-            color: #777;
+        li {
+            margin-bottom: 10px;
         }
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            padding: 20px;
-            background-color: rgb(95, 91, 91);
+
+        .cake-image {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
+
         table {
             width: 100%;
             border-collapse: collapse;
             background-color: white;
+            margin: 15px 0;
         }
+
         th, td {
-            border: 1px solid rgb(103, 101, 101);
-            padding: 8px;
+            padding: 10px;
             text-align: left;
+            border: 1px solid #ddd;
         }
+
         th {
-            background-color: white;
-            color: rgb(103, 100, 100);
+            background-color: #f2f2f2;
+            color: #5f5b5b;
         }
-        
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        strong {
+            color: #5f5b5b;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #ccc;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+            
+            .recipe-section {
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
     </style>
 </head>
 <body>
-    <img src="mealmap.jpeg" alt="Website Logo" class="logo">
-    <header>
-        
-        <h1><i>DELICIOUS CHOCOLATE CAKE</i></h1>
-    </header>
-    <main>
-        <section class="ingredients">
-            <h2><b>Ingredients</b></h2>
-            <h4> For The Cake:</h4>
-            <ul>
-                <li>1 3/4 cups all-purpose flour</li>
-            <li>1 1/2 cups granulated sugar</li>
-            <li>1/2 cup unsweetened cocoa powder</li>
-            <li>1 1/2 teaspoons baking powder</li>
-            <li>1 1/2 teaspoons baking soda</li>
-            <li>1 teaspoon salt</li>
-            <li>2 large eggs</li>
-            <li>1 cup whole milk</li>
-            <li>1/2 cup vegetable oil</li>
-            <li>2 teaspoons vanilla extract</li>
-            <li>1 cup boiling water</li>
-            </ul>
-            <h4>For The Frosting: </h4>
-            <ul>
-                <li>1/2 cup unsalted butter, softened</li>
-            <li>1/2 cup unsweetened cocoa powder</li>
-            <li>3 cups powdered sugar</li>
-            <li>1/4 cup whole milk</li>
-            <li>2 teaspoons vanilla extract</li>
-            <li>Pinch of salt</li>
-            </ul>
-        </section>
-        <section class="instructions">
-            <h2>Instructions:</h2>
-            <img src="chocolate cake.jpeg" alt="Cake" class="chocolate cake-image">
-            <ol>
-                <li><strong>Preheat the Oven:</strong><br>
-                    Preheat your oven to 350°F (175°C). Grease and flour two 9-inch round cake pans or line them with parchment paper.
-                </li>
-                <li><strong>Mix the Dry Ingredients:</strong><br>
-                    In a large mixing bowl, whisk together the flour, sugar, cocoa powder, baking powder, baking soda, and salt until well combined.
-                </li>
-                <li><strong>Add the Wet Ingredients:</strong><br>
-                    Add the eggs, milk, vegetable oil, and vanilla extract to the dry ingredients. Mix on medium speed using a hand mixer or stand mixer until smooth and well combined.
-                </li>
-                <li><strong>Add Boiling Water:</strong><br>
-                    Carefully add the boiling water to the batter and mix until combined. The batter will be thin, but this is normal.
-                </li>
-                <li><strong>Bake the Cake:</strong><br>
-                    Divide the batter evenly between the two prepared cake pans. Bake for 30-35 minutes, or until a toothpick inserted into the center of the cakes comes out clean.
-                </li>
-                <li><strong>Cool the Cake:</strong><br>
-                    Let the cakes cool in the pans for about 10 minutes. Then, transfer them to wire racks to cool completely.
-                </li>
-                <li><strong>Make the Frosting:</strong><br>
-                    In a medium bowl, sift together the cocoa powder and powdered sugar. In a separate bowl, beat the softened butter with a hand mixer until creamy.
-                    Gradually add the cocoa powder-sugar mixture to the butter, alternating with the milk, vanilla extract, and a pinch of salt. Continue mixing until smooth and fluffy.
-                </li>
-                <li><strong>Frost the Cake:</strong><br>
-                    Once the cakes are completely cooled, spread a layer of frosting on top of the first cake layer. Place the second layer on top, and frost the top and sides of the cake with the remaining frosting.
-                </li>
-                <li><strong>Serve:</strong><br>
-                    Slice and enjoy your delicious homemade chocolate cake! Store leftovers in an airtight container at room temperature for up to 3 days.
-                </li>
-            </ol>
-            <h2>Tips:</h2>
-            <ul>
-                <li><strong>Frosting Texture:</strong> If the frosting is too thick, add a little more milk, one tablespoon at a time, until you reach your desired consistency.</li>
-            <li><strong>Decoration:</strong> Decorate the top with chocolate shavings, sprinkles, or even fresh berries for a festive touch.</li>
-            <li><strong>Extra Moist Cake:</strong> If you want an even moister cake, you can substitute some of the vegetable oil with sour cream or buttermilk.</li>
-            <li><strong>Make Ahead:</strong> You can make the cake layers a day ahead and store them wrapped in plastic wrap at room temperature. Frost them before serving.</li>
-            </ul>
-        </section>
-    <section class="nuttritional information">
-    <h3>Nutritional Information for Chocolate Cake</h3>
-    <table>
-        <tr>
-            <th>Nutrient</th>
-            <th>Amount per Slice</th>
-        </tr>
-        <tr>
-            <td>Calories</td>
-            <td>250-350</td>
-        </tr>
-        <tr>
-            <td>Total Fat</td>
-            <td>12-20 g</td>
-        </tr>
-        <tr>
-            <td>Saturated Fat</td>
-            <td>4-8 g</td>
-        </tr>
-        <tr>
-            <td>Trans Fat</td>
-            <td>0 g</td>
-        </tr>
-        <tr>
-            <td>Cholesterol</td>
-            <td>30-60 mg</td>
-        </tr>
-        <tr>
-            <td>Sodium</td>
-            <td>200-400 mg</td>
-        </tr>
-        <tr>
-            <td>Total Carbohydrates</td>
-            <td>35-50 g</td>
-        </tr>
-        <tr>
-            <td>Dietary Fiber</td>
-            <td>1-3 g</td>
-        </tr>
-        <tr>
-            <td>Sugars</td>
-            <td>20-30 g</td>
-        </tr>
-        <tr>
-            <td>Protein</td>
-            <td>3-5 g</td>
-        </tr>
-        <tr>
-            <td>Vitamin A</td>
-            <td>2-4% DV</td>
-        </tr>
-        <tr>
-            <td>Vitamin C</td>
-            <td>0% DV</td>
-        </tr>
-        <tr>
-            <td>Calcium</td>
-            <td>2-4% DV</td>
-        </tr>
-        <tr>
-            <td>Iron</td>
-            <td>6-10% DV</td>
-        </tr>
-    </table>
-    </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 MEALMAP</p>
-    </footer>
+    <div class="container">
+        <header>
+            <img src="mealmap.jpeg" alt="MealMap Logo" class="logo">
+            <h1>Delicious Chocolate Cake</h1>
+        </header>
+
+        <main>
+            <section class="recipe-section">
+                <h2>Ingredients</h2>
+                
+                <h3>For The Cake:</h3>
+                <ul>
+                    <li>1¾ cups all-purpose flour</li>
+                    <li>1½ cups granulated sugar</li>
+                    <li>½ cup unsweetened cocoa powder</li>
+                    <li>1½ tsp baking powder</li>
+                    <li>1½ tsp baking soda</li>
+                    <li>1 tsp salt</li>
+                    <li>2 large eggs</li>
+                    <li>1 cup whole milk</li>
+                    <li>½ cup vegetable oil</li>
+                    <li>2 tsp vanilla extract</li>
+                    <li>1 cup boiling water</li>
+                </ul>
+                
+                <h3>For The Frosting:</h3>
+                <ul>
+                    <li>½ cup unsalted butter, softened</li>
+                    <li>½ cup unsweetened cocoa powder</li>
+                    <li>3 cups powdered sugar</li>
+                    <li>¼ cup whole milk</li>
+                    <li>2 tsp vanilla extract</li>
+                    <li>Pinch of salt</li>
+                </ul>
+            </section>
+
+            <section class="recipe-section">
+                <h2>Instructions</h2>
+                <img src="chocolate-cake.jpeg" alt="Decadent chocolate cake" class="cake-image">
+                
+                <ol>
+                    <li><strong>Preheat oven</strong> to 350°F (175°C). Grease and flour two 9-inch round cake pans.</li>
+                    <li><strong>Mix dry ingredients:</strong> Whisk together flour, sugar, cocoa, baking powder, baking soda, and salt.</li>
+                    <li><strong>Add wet ingredients:</strong> Beat in eggs, milk, oil, and vanilla until smooth.</li>
+                    <li><strong>Add boiling water:</strong> Carefully mix in boiling water (batter will be thin).</li>
+                    <li><strong>Bake:</strong> Divide batter between pans. Bake 30-35 minutes until toothpick comes out clean.</li>
+                    <li><strong>Cool:</strong> Let cool in pans 10 minutes, then transfer to wire racks.</li>
+                    <li><strong>Make frosting:</strong> Beat butter until creamy. Alternately add cocoa-sugar mixture and milk with vanilla and salt.</li>
+                    <li><strong>Frost cake:</strong> Once completely cooled, frost between layers and over top and sides.</li>
+                    <li><strong>Serve:</strong> Enjoy! Store leftovers covered at room temperature.</li>
+                </ol>
+                
+                <h3>Tips:</h3>
+                <ul>
+                    <li><strong>Fluffy frosting:</strong> Add milk 1 tbsp at a time if too thick</li>
+                    <li><strong>Decoration:</strong> Top with chocolate shavings or berries</li>
+                    <li><strong>Extra moist:</strong> Substitute ¼ cup oil with sour cream</li>
+                    <li><strong>Make ahead:</strong> Bake layers a day early, frost before serving</li>
+                </ul>
+            </section>
+
+            <section class="recipe-section">
+                <h2>Nutrition Information</h2>
+                <p>Per serving (1 slice):</p>
+                <table>
+                    <tr>
+                        <th>Nutrient</th>
+                        <th>Amount</th>
+                    </tr>
+                    <tr>
+                        <td>Calories</td>
+                        <td>300</td>
+                    </tr>
+                    <tr>
+                        <td>Total Fat</td>
+                        <td>15g</td>
+                    </tr>
+                    <tr>
+                        <td>Saturated Fat</td>
+                        <td>6g</td>
+                    </tr>
+                    <tr>
+                        <td>Cholesterol</td>
+                        <td>45mg</td>
+                    </tr>
+                    <tr>
+                        <td>Sodium</td>
+                        <td>300mg</td>
+                    </tr>
+                    <tr>
+                        <td>Carbohydrates</td>
+                        <td>42g</td>
+                    </tr>
+                    <tr>
+                        <td>Fiber</td>
+                        <td>2g</td>
+                    </tr>
+                    <tr>
+                        <td>Sugars</td>
+                        <td>25g</td>
+                    </tr>
+                    <tr>
+                        <td>Protein</td>
+                        <td>4g</td>
+                    </tr>
+                </table>
+                <p><em>Values are approximate and may vary based on specific ingredients used.</em></p>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 MealMap. All recipes are for personal use only.</p>
+        </footer>
+    </div>
 </body>
 </html>
