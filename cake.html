@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Delicious Chocolate Cake Recipe | MealMap</title>
     <style>
+        /* Base Styles */
         body {
             font-family: Arial, sans-serif;
             background-color: #5f5b5b;
@@ -18,9 +19,40 @@
             margin: 0 auto;
         }
 
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Header Animation */
         header {
             text-align: center;
             margin-bottom: 20px;
+            animation: fadeIn 1s ease-out;
         }
 
         .logo {
@@ -28,6 +60,7 @@
             height: 100px;
             border-radius: 50%;
             object-fit: cover;
+            animation: float 3s ease-in-out infinite;
         }
 
         h1 {
@@ -35,8 +68,10 @@
             font-style: italic;
             margin: 10px 0;
             font-size: 2rem;
+            animation: slideUp 0.8s ease-out;
         }
 
+        /* Section Animations */
         .recipe-section {
             background-color: white;
             border-radius: 8px;
@@ -44,7 +79,13 @@
             margin-bottom: 20px;
             color: #333;
             box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            opacity: 0;
+            animation: slideUp 0.8s ease-out forwards;
         }
+
+        .recipe-section:nth-child(1) { animation-delay: 0.3s; }
+        .recipe-section:nth-child(2) { animation-delay: 0.6s; }
+        .recipe-section:nth-child(3) { animation-delay: 0.9s; }
 
         h2 {
             color: #5f5b5b;
@@ -58,6 +99,7 @@
             margin: 15px 0 10px;
         }
 
+        /* List Animations */
         ul, ol {
             padding-left: 20px;
             line-height: 1.6;
@@ -65,8 +107,19 @@
 
         li {
             margin-bottom: 10px;
+            opacity: 0;
+            transform: translateX(-20px);
+            animation: fadeIn 0.5s ease-out forwards;
         }
 
+        /* Create staggered animation for list items */
+        @for $i from 1 through 20 {
+            li:nth-child(#{$i}) {
+                animation-delay: 0.1s * $i;
+            }
+        }
+
+        /* Image Animation */
         .cake-image {
             width: 100%;
             max-height: 400px;
@@ -74,19 +127,32 @@
             border-radius: 8px;
             margin: 15px 0;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
         }
 
+        .cake-image:hover {
+            transform: scale(1.02);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Table Animation */
         table {
             width: 100%;
             border-collapse: collapse;
             background-color: white;
             margin: 15px 0;
+            transform: scale(0.95);
+            opacity: 0;
+            animation: 
+                fadeIn 0.6s ease-out 1.2s forwards,
+                pulse 0.5s ease 1.8s forwards;
         }
 
         th, td {
             padding: 10px;
             text-align: left;
             border: 1px solid #ddd;
+            transition: background-color 0.3s ease;
         }
 
         th {
@@ -98,17 +164,35 @@
             background-color: #f9f9f9;
         }
 
+        tr:hover {
+            background-color: #f0f0f0;
+        }
+
         strong {
             color: #5f5b5b;
         }
 
+        /* Footer Animation */
         footer {
             text-align: center;
             margin-top: 30px;
             color: #ccc;
             font-size: 0.9em;
+            opacity: 0;
+            animation: fadeIn 1s ease-out 1.5s forwards;
         }
 
+        /* Button-like elements */
+        .recipe-section h2 {
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .recipe-section h2:hover {
+            color: #8b4513; /* Chocolate brown */
+        }
+
+        /* Responsive Styles */
         @media (max-width: 600px) {
             body {
                 padding: 10px;
@@ -116,10 +200,25 @@
             
             .recipe-section {
                 padding: 15px;
+                animation: none;
+                opacity: 1;
             }
             
             h1 {
                 font-size: 1.5rem;
+                animation: none;
+            }
+
+            li {
+                animation: none;
+                opacity: 1;
+                transform: none;
+            }
+
+            table {
+                animation: none;
+                opacity: 1;
+                transform: none;
             }
         }
     </style>
@@ -239,5 +338,35 @@
             <p>&copy; 2024 MealMap. All recipes are for personal use only.</p>
         </footer>
     </div>
+
+    <script>
+        // Add interactive animations on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.recipe-section');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationPlayState = 'running';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+            // Add hover effect to list items
+            const listItems = document.querySelectorAll('li');
+            listItems.forEach(item => {
+                item.addEventListener('mouseenter', () => {
+                    item.style.transform = 'translateX(5px)';
+                });
+                item.addEventListener('mouseleave', () => {
+                    item.style.transform = 'translateX(0)';
+                });
+            });
+        });
+    </script>
 </body>
 </html>
