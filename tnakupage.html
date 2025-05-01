@@ -3,43 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thank You - MealMap</title>
+    <title>Cannoli Recipe</title>
     <style>
-        /* Modern CSS Reset */
-        *, *::before, *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        
-        /* Vibrant Body Gradient */
+        /* Global Styles */
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #f9f6f1 0%, #fff5e6 100%);
-            color: #333;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: rgb(128, 6, 6);
+            margin: 0;
             padding: 20px;
+            animation: fadeIn 1.5s ease-out;
         }
-        
-        /* Animated Container */
-        .thank-you-container {
+
+        /* Header Styles */
+        header {
             text-align: center;
-            padding: 2.5rem;
-            border-radius: 16px;
-            background-color: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            max-width: 500px;
-            width: 100%;
-            transform: translateY(0);
-            animation: floatUp 0.6s ease-out;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            backdrop-filter: blur(5px);
+            margin-bottom: 30px;
+            animation: slideIn 1s ease-out;
         }
-        
-        @keyframes floatUp {
+
+        .logo {
+            width: 100px;
+            border-radius: 70%;
+            display: block;
+            margin: 0 auto;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: rotate(360deg);
+        }
+
+        h1, h3 {
+            color: white;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        h2, h4, h5 {
+            color: rgb(128, 6, 6);
+            animation: fadeInUp 1.5s ease-out;
+        }
+
+        /* Ingredients and Instructions Section */
+        .ingredients, .instructions {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            animation: fadeInUp 2s ease-out forwards;
+        }
+
+        .ingredients {
+            animation-delay: 0.5s;
+        }
+
+        .instructions {
+            animation-delay: 1s;
+        }
+
+        ul, ol {
+            line-height: 1.6;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            margin-top: 10px;
+            animation: fadeInUp 1.5s ease-out;
+        }
+
+        th, td {
+            border: 1px solid rgb(128, 6, 6);
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: white;
+            color: rgb(128, 6, 6);
+        }
+
+        /* Image Styles */
+        .Cannoli-image {
+            display: block;
+            margin: 15px auto;
+            border-radius: 8px;
+            opacity: 0;
+            animation: fadeIn 1s ease-out forwards;
+        }
+
+        /* Footer Styles */
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #ccc;
+            animation: fadeInUp 2s ease-out;
+            animation-delay: 2s;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
             from {
                 opacity: 0;
                 transform: translateY(20px);
@@ -49,112 +124,120 @@
                 transform: translateY(0);
             }
         }
-        
-        /* Vibrant Heading */
-        h1 {
-            color: #ff6b6b;
-            font-size: 2.2rem;
-            margin-bottom: 1rem;
-            background: linear-gradient(to right, #ff6b6b, #ffa502);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            font-weight: 700;
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
-        
-        /* Improved Paragraph */
-        p {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            margin-bottom: 2rem;
-            color: #555;
+
+        /* Hover Effects */
+        .logo:hover {
+            transform: rotate(360deg);
         }
-        
-        /* Animated Icon */
-        .icon {
-            font-size: 4rem;
-            margin: 1.5rem 0;
-            display: inline-block;
-            animation: bounce 2s infinite;
-            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+
+        tr:hover {
+            background-color: rgba(128, 6, 6, 0.1);
         }
-        
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-        
-        /* Modern Buttons */
-        .buttons {
-            display: flex;
-            gap: 1.2rem;
-            justify-content: center;
-            margin-top: 1.5rem;
-        }
-        
-        .button {
-            text-decoration: none;
-            color: white;
-            background: linear-gradient(to right, #ff6b6b, #ff8e53);
-            padding: 0.9rem 1.8rem;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
-            border: none;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
-        }
-        
-        .button:active {
-            transform: translateY(1px);
-        }
-        
-        /* Decorative Elements */
-        .thank-you-container::before {
-            content: "";
-            position: absolute;
-            top: -10px;
-            left: -10px;
-            right: -10px;
-            bottom: -10px;
-            border-radius: 20px;
-            background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fbc2eb, #a6c1ee);
-            z-index: -1;
-            opacity: 0.2;
+
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+
+            .ingredients, .instructions {
+                padding: 15px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="thank-you-container">
-        <h1>Thank You for Your Feedback!</h1>
-        <p>We truly appreciate you taking the time to share your thoughts with us. Your feedback is invaluable in helping us improve MealMap and create even better culinary experiences for you!</p>
-        
-        <div class="icon">&#127860;</div>
-        <p>
-            <p>
-                <p>
-                    <p>
-                        <p>
-                            ,p>
-                            <p>
-                                <p>
-                                    <p>
-            </p>
-        </p>
-        <div class="buttons">
-            <a href="1.html" class="button">Back to Home</a>
-            <a href="#" class="button">Explore More Recipes</a>
-        </div>
-    </div>
+
+    <header>
+        <img src="mealmap.jpg" alt="MealMap Logo" class="logo">
+        <h1><i>Delicious Cannoli</i></h1>
+    </header>
+
+    <main>
+        <section class="ingredients">
+            <h2>Ingredients</h2>
+
+            <h4>For the shells:</h4>
+            <ul>
+                <li>2 cups all-purpose flour</li>
+                <li>3 tablespoons granulated sugar</li>
+                <li>1/2 teaspoon salt</li>
+                <li>1 tablespoon unsweetened cocoa powder (optional)</li>
+                <li>1/2 teaspoon ground cinnamon</li>
+                <li>3 tablespoons unsalted butter, softened</li>
+                <li>1 egg</li>
+                <li>1/2 cup dry white wine (or as needed)</li>
+                <li>Oil for frying</li> 
+            </ul>
+
+            <h4>For the filling:</h4>
+            <ul>
+                <li>15 oz ricotta cheese (drained)</li>
+                <li>1 cup powdered sugar</li>
+                <li>1 teaspoon vanilla extract</li>
+                <li>1/2 cup mini chocolate chips (optional)</li>
+                <li>Zest of 1 orange (optional)</li>
+            </ul>
+
+            <h4>For garnishing:</h4>
+            <ul>
+                <li>Powdered sugar (for dusting)</li>
+                <li>Chopped pistachios (optional)</li>
+                <li>Extra chocolate chips (optional)</li>
+            </ul>
+        </section>
+
+        <section class="instructions">
+            <h2>Instructions</h2>
+            <img src="cannoli.jpg" alt="Cannoli Dessert" class="Cannoli-image" height="200px">
+
+            <ol>
+                <li><strong>Make the Shells:</strong> In a large bowl, mix the flour, sugar, cocoa powder (if using), cinnamon, and salt. Add butter and rub it in until crumbly.</li>
+                <li>Add the egg and wine. Mix to form a dough. Knead on a floured surface for 5 minutes. Cover and rest for 30 minutes.</li>
+                <li><strong>Shape:</strong> Roll out and cut into 4-inch circles. Wrap around cannoli tubes, sealing with egg white.</li>
+                <li><strong>Fry:</strong> Heat oil to 350°F (175°C). Fry shells 2–3 mins until golden. Drain and cool.</li>
+                <li><strong>Filling:</strong> Mix ricotta, powdered sugar, vanilla. Add chips and orange zest if desired.</li>
+                <li><strong>Assemble:</strong> Fill cooled shells just before serving to prevent sogginess.</li>
+                <li><strong>Serve:</strong> Dust with powdered sugar. Garnish as desired.</li>
+            </ol>
+
+            <h2>Tips for Perfect Cannoli</h2>
+            <ul>
+                <li><strong>Drain Ricotta:</strong> Use cheesecloth or a fine mesh sieve.</li>
+                <li><strong>Rest Dough:</strong> It makes rolling easier.</li>
+                <li><strong>Monitor Frying Temperature:</strong> Keep it steady at 350°F.</li>
+                <li><strong>Fill at the Last Minute:</strong> Keeps the shell crisp.</li>
+                <li><strong>Add Pistachios:</strong> For color and crunch.</li>
+            </ul>
+        </section>
+
+        <section class="nutrition">
+            <h3>Nutritional Information (per serving)</h3>
+            <table>
+                <tr><th>Nutrient</th><th>Amount</th></tr>
+                <tr><td>Calories</td><td>250 kcal</td></tr>
+                <tr><td>Protein</td><td>5 g</td></tr>
+                <tr><td>Fat</td><td>15 g</td></tr>
+                <tr><td>Carbohydrates</td><td>30 g</td></tr>
+                <tr><td>Fiber</td><td>1 g</td></tr>
+                <tr><td>Sugar</td><td>8 g</td></tr>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 MEALMAP. All rights reserved.</p>
+    </footer>
+
 </body>
 </html>
