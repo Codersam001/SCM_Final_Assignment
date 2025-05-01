@@ -3,154 +3,346 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Customer Reviews</title>
+  <meta name="description" content="Share your experience and read customer reviews about our service">
+  <title>Customer Reviews | Share Your Feedback</title>
   <link rel="stylesheet" href="review.css">
-<style>
+  <style>
+    :root {
+      --primary-color: #4a6fa5;
+      --secondary-color: #166088;
+      --accent-color: #4fc3a1;
+      --text-color: #333;
+      --light-text: #f8f9fa;
+      --bg-color: #f5f7fa;
+      --card-bg: #ffffff;
+      --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      --border-radius: 8px;
+    }
+
     * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #2e2e55;
-    color: #478150;
-  }
-  
-  .container {
-    width: 80%;
-    margin: 0 auto;
-  }
-  
-  header {
-    text-align: center;
-    padding: 30px;
-  }
-  
-  h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-  }
-  
-  p {
-    font-size: 1.1rem;
-    color: #666;
-  }
-  
-  .review-form {
-    background-color: #fff;
-    padding: 20px;
-    margin-bottom: 30px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .review-form h2 {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-  }
-  
-  label {
-    font-weight: bold;
-    margin-bottom: 8px;
-    display: block;
-  }
-  
-  input, select, textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1rem;
-  }
-  
-  button {
-    padding: 10px 20px;
-    background-color: #5cb85c;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.2rem;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #4cae4c;
-  }
-  
-  .reviews {
-    margin-top: 40px;
-  }
-  
-  .review-item {
-    background-color: #fff;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .review-item .review-rating {
-    font-size: 1.5rem;
-    color: #f39c12;
-  }
-  
-  .review-item .review-author {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-top: 5px;
-  }
-  
-  .review-item .review-title {
-    font-size: 1.1rem;
-    font-style: italic;
-    margin-top: 10px;
-  }
-  
-  .review-item .review-text {
-    margin-top: 10px;
-    font-size: 1rem;
-    color: #555;
-  }
-  
-</style>
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+    }
+    
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 0;
+    }
+    
+    header {
+      text-align: center;
+      padding: 2rem 0;
+      margin-bottom: 2rem;
+    }
+    
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: var(--secondary-color);
+      position: relative;
+      display: inline-block;
+    }
+
+    h1::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background-color: var(--accent-color);
+      border-radius: 2px;
+    }
+    
+    .subtitle {
+      font-size: 1.2rem;
+      color: var(--text-color);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .review-form {
+      background-color: var(--card-bg);
+      padding: 2rem;
+      margin-bottom: 3rem;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+    }
+    
+    .review-form h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      color: var(--secondary-color);
+    }
+    
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    
+    label {
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      display: block;
+      color: var(--secondary-color);
+    }
+    
+    input, select, textarea {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid #ddd;
+      border-radius: var(--border-radius);
+      font-size: 1rem;
+      transition: border 0.3s ease;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: var(--accent-color);
+      box-shadow: 0 0 0 2px rgba(79, 195, 161, 0.2);
+    }
+    
+    textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+    
+    .rating-container {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .rating-container input[type="radio"] {
+      display: none;
+    }
+
+    .rating-container label {
+      font-size: 2rem;
+      color: #ccc;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+
+    .rating-container input[type="radio"]:checked ~ label {
+      color: #ffc107;
+    }
+
+    .rating-container label:hover,
+    .rating-container label:hover ~ label {
+      color: #ffc107;
+    }
+    
+    .submit-btn {
+      padding: 0.8rem 2rem;
+      background-color: var(--accent-color);
+      color: white;
+      border: none;
+      border-radius: var(--border-radius);
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.2s;
+      display: inline-block;
+    }
+    
+    .submit-btn:hover {
+      background-color: #3da389;
+      transform: translateY(-2px);
+    }
+
+    .reviews-section {
+      margin-top: 3rem;
+    }
+
+    .reviews-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .reviews-title {
+      font-size: 1.8rem;
+      color: var(--secondary-color);
+    }
+
+    .sort-options {
+      padding: 0.5rem;
+      border-radius: var(--border-radius);
+      border: 1px solid #ddd;
+    }
+
+    .review-card {
+      background-color: var(--card-bg);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      transition: transform 0.3s ease;
+    }
+
+    .review-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .review-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+
+    .review-author {
+      font-weight: 600;
+      color: var(--secondary-color);
+    }
+
+    .review-date {
+      color: #777;
+      font-size: 0.9rem;
+    }
+
+    .review-rating {
+      color: #ffc107;
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .review-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--primary-color);
+    }
+
+    .review-text {
+      color: #555;
+      line-height: 1.7;
+    }
+
+    .no-reviews {
+      text-align: center;
+      padding: 2rem;
+      color: #777;
+      font-style: italic;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        width: 95%;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      .review-header {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
   <div class="container">
     <header>
       <h1>Customer Reviews</h1>
-      <p>We value your feedback! Share your experience with us and help others make informed decisions.</p>
+      <p class="subtitle">We value your feedback! Share your experience with us and help others make informed decisions.</p>
     </header>
 
     <!-- Review Submission Form -->
-    <section class="review-form">
-      <h2>Write a Review</h2>
-      <form action="#" method="POST">
-        <label for="name">Your Name:</label>
-        <input type="text" id="name" name="name" placeholder="Enter your name (optional)">
+    <section class="review-form" aria-labelledby="review-form-heading">
+      <h2 id="review-form-heading">Write a Review</h2>
+      <form action="#" method="POST" id="reviewForm">
+        <div class="form-group">
+          <label for="name">Your Name (optional):</label>
+          <input type="text" id="name" name="name" placeholder="John Doe" aria-label="Your name">
+        </div>
 
-        <label for="rating">Rating (1-5 stars):</label>
-        <select id="rating" name="rating">
-          <option value="1">⭐</option>
-          <option value="2">⭐⭐</option>
-          <option value="3">⭐⭐⭐</option>
-          <option value="4">⭐⭐⭐⭐</option>
-          <option value="5">⭐⭐⭐⭐⭐</option>
-        </select>
+        <div class="form-group">
+          <label>Rating:</label>
+          <div class="rating-container" role="radiogroup" aria-labelledby="rating-label">
+            <input type="radio" id="star5" name="rating" value="5" aria-label="5 stars">
+            <label for="star5">★</label>
+            <input type="radio" id="star4" name="rating" value="4" aria-label="4 stars">
+            <label for="star4">★</label>
+            <input type="radio" id="star3" name="rating" value="3" aria-label="3 stars">
+            <label for="star3">★</label>
+            <input type="radio" id="star2" name="rating" value="2" aria-label="2 stars">
+            <label for="star2">★</label>
+            <input type="radio" id="star1" name="rating" value="1" aria-label="1 star">
+            <label for="star1">★</label>
+          </div>
+        </div>
 
+        <div class="form-group">
+          <label for="review-title">Review Title:</label>
+          <input type="text" id="review-title" name="review-title" placeholder="Great experience!" aria-label="Review title">
+        </div>
 
-        <label for="review-text">Your Review:</label>
-        <textarea id="review-text" name="review-text" rows="5" placeholder="Enter your detailed feedback here"></textarea>
+        <div class="form-group">
+          <label for="review-text">Your Review:</label>
+          <textarea id="review-text" name="review-text" placeholder="Tell us about your experience..." aria-label="Your review"></textarea>
+        </div>
 
-        
-
-        <button type="submit"> Submit Review</button>
+        <button type="submit" class="submit-btn">Submit Review</button>
       </form>
     </section>
 
-    
-      
+    <!-- Reviews Display Section -->
+    <section class="reviews-section" aria-labelledby="reviews-heading">
+      <div class="reviews-header">
+        <h2 id="reviews-heading" class="reviews-title">Customer Reviews</h2>
+        <select class="sort-options" aria-label="Sort reviews">
+          <option value="newest">Newest First</option>
+          <option value="highest">Highest Rated</option>
+          <option value="lowest">Lowest Rated</option>
+        </select>
+      </div>
 
+      <div id="reviews-container">
+        <!-- Sample Review (would be dynamically generated in a real app) -->
+        <article class="review-card">
+          <div class="review-header">
+            <span class="review-author">Sarah Johnson</span>
+            <span class="review-date">June 15, 2023</span>
+          </div>
+          <div class="review-rating" aria-label="Rated 5 out of 5 stars">★★★★★</div>
+          <h3 class="review-title">Amazing service!</h3>
+          <p class="review-text">I had a wonderful experience with this company. The staff was friendly and the product quality exceeded my expectations. I would definitely recommend them to my friends and family.</p>
+        </article>
+
+        <article class="review-card">
+          <div class="review-header">
+            <span class="review-author">Michael Chen</span>
+            <span class="review-date">May 28, 2023</span>
+          </div>
+          <div class="review-rating" aria-label="Rated 4 out of 5 stars">★★★★☆</div>
+          <h3 class="review-title">Good overall</h3>
+          <p class="review-text">Pretty satisfied with the service. Delivery was fast and the product was as described. Only minor issue was with packaging, but customer service was quick to respond.</p>
+        </article>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    document.getElementById('reviewForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      // In a real application, you would handle form submission here
+      alert('Thank you for your review! (This is a demo - your review wasn\'t actually submitted)');
+      this.reset();
+    });
+  </script>
 </body>
 </html>
